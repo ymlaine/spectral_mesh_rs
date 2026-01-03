@@ -258,6 +258,16 @@ impl App {
                 self.needs_mesh_rebuild = true;
             }
 
+            // Audio sensitivity controls
+            KeyCode::ArrowUp => {
+                self.state.audio_sensitivity = (self.state.audio_sensitivity + 0.1).min(5.0);
+                log::info!("Audio sensitivity: {:.1}", self.state.audio_sensitivity);
+            }
+            KeyCode::ArrowDown => {
+                self.state.audio_sensitivity = (self.state.audio_sensitivity - 0.1).max(0.0);
+                log::info!("Audio sensitivity: {:.1}", self.state.audio_sensitivity);
+            }
+
             _ => {}
         }
     }
@@ -333,8 +343,9 @@ impl App {
 
         // Audio modulation - aesthetic effect: bass modulates displacement and LFO
         if let Some(ref mut audio) = self.audio {
-            let bass = audio.bass();
-            let rms = audio.rms();
+            let sensitivity = self.state.audio_sensitivity;
+            let bass = audio.bass() * sensitivity;
+            let rms = audio.rms() * sensitivity;
 
             // Reduced amplitude for subtle global effect
             self.state.audio_mod_displacement = bass * 2.0;
@@ -526,9 +537,7 @@ fn main() {
                             },
                         ..
                     } => {
-                        if key == KeyCode::Escape {
-                            elwt.exit();
-                        }
+                        // ESC disabled - use Ctrl+C or close window to quit
                         app.handle_keyboard(key, state == ElementState::Pressed);
                     }
                     WindowEvent::RedrawRequested => {

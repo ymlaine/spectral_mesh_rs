@@ -155,6 +155,9 @@ pub struct AppState {
     pub audio_wave_phase: f32,
     pub audio_wave_amp: f32,
     pub audio_wave_freq: f32,
+
+    // Audio sensitivity (user adjustable)
+    pub audio_sensitivity: f32,
 }
 
 #[derive(Default)]
@@ -218,6 +221,7 @@ impl AppState {
             audio_wave_phase: 0.0,
             audio_wave_amp: 0.0,
             audio_wave_freq: 15.0, // Base wave frequency
+            audio_sensitivity: 1.0, // Default sensitivity (1.0 = normal)
         }
     }
 

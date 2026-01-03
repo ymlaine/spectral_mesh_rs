@@ -66,7 +66,10 @@ Spectral Mesh is a real-time video mesh distortion tool for live visual performa
   - Ring modulation between channels
   - Phase modulation between channels
   - Spatial frequency control
-- **Audio reactivity**: Mesh responds to bass frequencies
+- **Audio reactivity**:
+  - Mesh displacement responds to bass frequencies
+  - LFO modulation driven by audio RMS
+  - Adjustable sensitivity (0.0 to 5.0)
 - **MIDI control**: Full parameter control via MIDI CC
 - **P-Lock system**: Parameter recording and playback (Elektron-style)
 - **Visual effects**: Luma key, color inversion, greyscale, brightness modes
@@ -144,9 +147,12 @@ The binary will be at `./target/release/spectral_mesh`
 | `T` / `Y` | Center X +/- |
 | `U` / `I` | Center Y +/- |
 | `O` / `P` | Zoom +/- |
+| **Audio Reactivity** | |
+| `Arrow Up` | Increase audio sensitivity (+0.1, max 5.0) |
+| `Arrow Down` | Decrease audio sensitivity (-0.1, min 0.0) |
 | **Other** | |
 | `H` | Show help in terminal |
-| `ESC` | Quit |
+| Close window or `Ctrl+C` | Quit |
 
 ## MIDI Mapping
 
