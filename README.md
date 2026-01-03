@@ -4,6 +4,12 @@ A Rust/wgpu port of [Spectral Mesh](https://github.com/ex-zee-ex/spectral_mesh) 
 
 This is a complete rewrite in Rust targeting cross-platform support (macOS, Linux, Raspberry Pi 4) while preserving the original's visual aesthetic and MIDI control philosophy.
 
+## Demo
+
+[![Spectral Mesh RS Demo](https://img.youtube.com/vi/6OI3duUgsZ0/0.jpg)](https://www.youtube.com/watch?v=6OI3duUgsZ0)
+
+Watch the demo video on YouTube: [Spectral Mesh RS - Live Demo](https://www.youtube.com/watch?v=6OI3duUgsZ0)
+
 ## What is Spectral Mesh?
 
 Spectral Mesh is a real-time video mesh distortion tool for live visual performances. It captures video input, applies it to a deformable mesh, and distorts it using brightness-based displacement and multiple LFO modulation sources. Perfect for VJing, live concerts, and experimental video art.
