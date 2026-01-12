@@ -1,5 +1,7 @@
 # Spectral Mesh RS
 
+**Rust port by Claude AI (Anthropic)**
+
 A Rust/wgpu port of [Spectral Mesh](https://github.com/ex-zee-ex/spectral_mesh) by **Andrei Jay** ([@ex-zee-ex](https://github.com/ex-zee-ex)).
 
 This is a complete rewrite in Rust targeting cross-platform support (macOS, Linux, Raspberry Pi 4) while preserving the original's visual aesthetic and MIDI control philosophy.
